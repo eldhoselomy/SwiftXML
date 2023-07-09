@@ -13,7 +13,7 @@ xml in Swift
 
 ```ruby
 dependencies: [
-    .package(url: "https://github.com/eldhoselomy/SwiftXML")
+    .package(url: "https://github.com/eldhoselomy/SwiftXML", from: "1.0.3"),
 ],
 ```
 
