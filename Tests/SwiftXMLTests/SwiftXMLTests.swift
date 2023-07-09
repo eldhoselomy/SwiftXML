@@ -1,7 +1,7 @@
 import XCTest
-@testable import Reindeer
+@testable import SwiftXML
 
-final class ReindeerTests: XCTestCase {
+final class SwiftXMLTests: XCTestCase {
 
   func test1() {
     // http://www.w3schools.com/xml/cd_catalog.xml
