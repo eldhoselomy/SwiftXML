@@ -24,8 +24,6 @@ let package = Package(
         .testTarget(
             name: "SwiftXMLTests",
             dependencies: ["SwiftXML"],
-            path: "Tests",
-            exclude: ["Info.plist", "Test Plans"],
-            resources: [.process("Resources")]),
+            exclude: ["Resources"]),
     ]
 )
