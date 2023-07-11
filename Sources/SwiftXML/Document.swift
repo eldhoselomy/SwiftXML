@@ -60,12 +60,17 @@ open class Document {
             throw InternalError.lastError()
         }
         
-        self.init(document: document)
+        try self.init(document: document)
     }
     
-    init(document: xmlDocPtr) {
-        self.cDocument = document
-        self.rootElement = Element(node: xmlDocGetRootElement(document))
+    init(document: xmlDocPtr) throws {
+      self.cDocument = document
+      if let rootElementFromDoc = xmlDocGetRootElement(document) {
+          self.rootElement = Element(node: rootElementFromDoc)
+      } else {
+          xmlFreeDoc(cDocument)
+          throw InternalError.parse(message: "Not able to get root element", code: 10001)
+      }
     }
     
     deinit {
